@@ -1,0 +1,7 @@
+Boss Development Map This repository contains an AI-assisted project of a map in development, open for collaboration. The main goal is to catalog the existing bosses at the moment. Once all bosses are marked on the map, we will expand to include dungeons, items, and other elements.
+
+How to Contribute If you're interested in contributing to this map, feel free to do so! Here are some ways to help:
+
+Adding new bosses to the map Updating existing information about bosses Adding markings for dungeons, items, etc. Correcting errors or inaccuracies on the map How to Contribute Fork this repository. Clone the fork to your local environment. Make desired changes to the map. Send a pull request with your changes. Observations This project is in constant evolution. We encourage feedback and suggestions for improvements. Be sure to follow the contribution guidelines when submitting changes.
+
+Nothing is defined in terms of final libraries and languages. The code still needs a lot of work to make it lighter and easier to use. For now, the goal is to develop everything in HTML, JavaScript, and SQL to create a place for documentation of the base elements used. Here are some ideas for the expected format for the elements to be documented: { "category_id": x, "title": "x", "description": "x", "latitude": "x", "longitude": "x", "wiki id": "x" } not yet implemented Let's work together to create a valuable resource for the gaming community!
