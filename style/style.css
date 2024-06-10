@@ -1,0 +1,18 @@
+#map {
+    position: relative;
+    width: 100%; /* Use 100% para ocupar toda a largura do contêiner pai */
+    height: 500px; /* Ajuste a altura conforme necessário */
+    overflow: hidden; /* Para garantir que a imagem não saia do contêiner */
+}
+.map-image {
+    width: 100%; /* A imagem ocupa toda a largura do contêiner */
+    height: auto; /* Altura ajustável de acordo com a largura */
+}
+.marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+}

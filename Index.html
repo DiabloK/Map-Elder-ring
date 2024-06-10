@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interativo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 100vh; /* Define a altura do mapa como 100% da altura da janela */
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        // Limites do mapa
+        var southWest = L.latLng(-90, -180); // Canto sudoeste
+        var northEast = L.latLng(90, 180); // Canto nordeste
+        var bounds = L.latLngBounds(southWest, northEast); // Limites totais do mapa
+
+        // Inicialize o mapa Leaflet
+        var map = L.map('map', {
+            center: [0, 0], // Define o centro do mapa
+            zoom: 2, // Define o nível de zoom inicial
+            minZoom: 2, // Define o nível de zoom mínimo
+            maxZoom: 10, // Define o nível de zoom máximo
+            maxBounds: bounds // Limites de movimento do mapa
+        }); 
+
+        // Adiciona o ImageOverlay
+        var imageUrl = 'img/Map.jpg'; // Caminho da sua imagem
+        var imageBounds = [[-90, -180], [90, 180]]; // Limites da imagem (latitude e longitude) - cobrindo o mapa inteiro
+        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+        // Adiciona uma marcação ao mapa
+        var marker = L.marker([3.246095307188778,140.39428710937503]).addTo(map)
+            .bindPopup('Maliketh, the Black Blade(BOSS)');
+        var marker = L.marker([80.85887488432991,33.73901367187501]).addTo(map)
+            .bindPopup('Malenia, Goddess of Rot(THE BOSS)');
+        var marker = L.marker([-83.77062276557126,-32.29980468750001]).addTo(map)
+            .bindPopup('Leonine Misbegotten');
+
+        // Adiciona evento de clique com botão direito do mouse
+        map.on('contextmenu', function(e) {
+            console.log('Coordenadas do clique com o botão direito:', e.latlng);
+        });
+        
+        // Função para aumentar o zoom
+        function zoomIn() {
+            map.zoomIn();
+        }
+
+        // Função para diminuir o zoom
+        function zoomOut() {
+            map.zoomOut();
+        }
+    </script>
+
+    <button onclick="zoomIn()">Zoom In</button>
+    <button onclick="zoomOut()">Zoom Out</button>
+</body>
+</html>
